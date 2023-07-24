@@ -36,6 +36,9 @@ export class User{
     @Prop()
     updatatedAt : Date
 
+    @Prop({default: false})
+    isAdmin : boolean
+
 }
 
 export const UserSchema = SchemaFactory.createForClass(User)
