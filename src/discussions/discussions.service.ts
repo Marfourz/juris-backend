@@ -37,12 +37,15 @@ export class DiscussionsService {
     if(params.tag)
       filters['tag'] = params.tag
 
-    return this.discussionModel.find({...filters, 'user': userId})
+    return this.discussionModel.find({...filters, 'user': userId}).sort({
+      createdAt : -1
+    })
   }
 
   findAll() {
-
-    return this.discussionModel.find({})
+    return this.discussionModel.find({}).sort({
+      createdAt : -1
+    })
   }
 
   getTotal(){
