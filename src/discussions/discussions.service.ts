@@ -58,7 +58,7 @@ export class DiscussionsService {
       return await this.discussionModel.findByIdAndUpdate({_id:id}, updateDiscussionDto,{new: true})
   }
 
-  async remove(id: string, userId : string) {
+  async remove(id: string) : Promise<any> {
       const discussion = await this.discussionModel.findById(id)
       if(!discussion)
         throw new NotFoundException('Discussion not found')

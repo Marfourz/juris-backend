@@ -48,7 +48,7 @@ export class DiscussionsController {
 
   @Delete(':id')
   @UseGuards(AuthGuard)
-  remove(@Param('id') id: string, @Req() req) {
-    return this.discussionsService.remove(id,req.user.id);
+  remove(@Param('id') id: string) {
+    return this.discussionsService.remove(id);
   }
 }
