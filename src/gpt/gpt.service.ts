@@ -16,6 +16,7 @@ export class GptService {
     const configuration = new Configuration({
       apiKey: process.env.GPT_KEY,
     });
+    console.log('gpt key',process.env.GPT_KEY )
     const openai = new OpenAIApi(configuration);
 
     const chatGptMessages = [
