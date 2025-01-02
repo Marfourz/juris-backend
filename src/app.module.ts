@@ -14,7 +14,7 @@ import { GptService } from './gpt/gpt.service';
 @Module({
   imports: [
      ConfigModule.forRoot(),
-    MongooseModule.forRoot("mongodb+srv://boukarimarfourz:8oleBgxfRHGth8YE@cluster0.u5szd.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0"),
+    MongooseModule.forRoot(process.env.DATABASE_URL),
   
   UsersModule, MessagesModule, DiscussionsModule, AuthModule,
  
