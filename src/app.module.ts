@@ -14,7 +14,7 @@ import { GptService } from './gpt/gpt.service';
 @Module({
   imports: [
      ConfigModule.forRoot(),
-    MongooseModule.forRoot(process.env.DATABASE_URL || 'mongodb://localhost/juris-db'),
+    MongooseModule.forRoot(process.env.DATABASE_URL),
   
   UsersModule, MessagesModule, DiscussionsModule, AuthModule,
  
