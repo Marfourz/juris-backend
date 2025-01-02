@@ -12,10 +12,12 @@ import { AdminController } from './admin/admin.controller';
 import { GptService } from './gpt/gpt.service';
 
 @Module({
-  imports: [MongooseModule.forRoot(process.env.DATABASE_URL || 'mongodb://localhost/juris-db'),
+  imports: [
+     ConfigModule.forRoot(),
+    MongooseModule.forRoot(process.env.DATABASE_URL || 'mongodb://localhost/juris-db'),
   
   UsersModule, MessagesModule, DiscussionsModule, AuthModule,
-  ConfigModule.forRoot(),
+ 
   JwtModule.register({
     global: true,
     secret: process.env.JWT_SECRET,
